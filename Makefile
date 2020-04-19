@@ -14,9 +14,9 @@ release: test $(PLATFORMS)
 
 $(PLATFORMS):
 	# Build multiplatform images
-	docker build --build-arg GOOS=$(os) --build-arg GOARCH=$(arch) -t homepage-$(os)-$(arch) .
+	docker build --build-arg GOOS=$(os) --build-arg GOARCH=$(arch) -t credential-harvester-$(os)-$(arch) .
 
 	# Push image to public registry - hub.docker.com
 	docker login
-	docker tag homepage-$(os)-$(arch):latest reisinge/homepage-$(os)-$(arch):latest
-	docker push reisinge/homepage-$(os)-$(arch):latest
+	docker tag credential-harvester-$(os)-$(arch):latest reisinge/credential-harvester-$(os)-$(arch):latest
+	docker push reisinge/credential-harvester-$(os)-$(arch):latest
