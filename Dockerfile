@@ -18,4 +18,4 @@ WORKDIR /app/credential_harvester
 COPY --from=build /bin/credential-harvester /app/credential_harvester/credential-harvester
 
 EXPOSE 8080
-ENTRYPOINT ["/app/credential_harverster/credential-harvester"]
+ENTRYPOINT ["/app/credential_harvester/credential-harvester"]
