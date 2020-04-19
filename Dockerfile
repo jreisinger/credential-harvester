@@ -7,6 +7,10 @@ WORKDIR /go/src/credential_harvester
 COPY . ./
 RUN go build -o /bin/credential-harvester
 
+# Download all dependencies.
+COPY go.mod go.sum ./
+RUN go mod download
+
 # Create a single layer image.
 #FROM scratch # -> this doesn't work
 FROM alpine:latest
