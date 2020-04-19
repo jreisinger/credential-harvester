@@ -16,6 +16,7 @@ RUN go mod download
 FROM alpine:latest
 WORKDIR /app/credential_harvester
 COPY --from=build /bin/credential-harvester /app/credential_harvester/credential-harvester
+COPY --from=build /go/src/credential_harvester/public /app/credential_harvester/public
 
 EXPOSE 8080
 ENTRYPOINT ["/app/credential_harvester/credential-harvester"]
