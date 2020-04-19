@@ -17,7 +17,7 @@ Test locally:
 make build
 ./main
 
-curl localhost:5001
+curl localhost:8080
 ```
 
 Release to dockerhub:
